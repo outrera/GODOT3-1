@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scene/mario.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprite/m_caindo.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/m_morrendo.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprite/m_voando.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprite/m_correndo_ (1).png" type="Texture" id=4]
 [ext_resource path="res://assets/sprite/m_correndo_ (2).png" type="Texture" id=5]
 [ext_resource path="res://assets/sprite/m_correndo_ (3).png" type="Texture" id=6]
 [ext_resource path="res://assets/sprite/m_correndo_ (4).png" type="Texture" id=7]
-[ext_resource path="res://assets/sprite/m_morrendo.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/m_caindo.png" type="Texture" id=8]
 [ext_resource path="res://assets/sound/smw2_coin.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/sound/smw2_falling_chomp.wav" type="AudioStream" id=10]
 
@@ -16,7 +16,7 @@
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "caindo",
+"name": "morrendo",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -31,9 +31,10 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "norrendo",
+"name": "caindo",
 "speed": 5.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="CircleShape2D" id=2]
 
@@ -91,5 +92,7 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[connection signal="finished" from="som_morrer" to="." method="_on_som_morrer_finished"]
 
 

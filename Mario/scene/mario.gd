@@ -28,11 +28,17 @@ func _input(event):
 			voar()
 	pass
 
-func morrer():
+func morreu():
 	if esta_vivo:
 		esta_vivo = false
-		$anm.play("som_morrer")
+		$anm.play("morrendo")
 		$som_morrer.play()
 		linear_velocity = Vector2(0,-350)
+		
 	pass
 
+
+
+func _on_som_morrer_finished():
+	get_tree().change_scene("res://scene/game_over.tscn")
+	pass

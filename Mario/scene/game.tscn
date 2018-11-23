@@ -1,17 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scene/game.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprite/bgp.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprite/chao.jpg" type="Texture" id=3]
-[ext_resource path="res://assets/font/ARCADECLASSIC.TTF" type="DynamicFontData" id=4]
-[ext_resource path="res://scene/mario.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/parallax.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprite/bgp.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/chao.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/font/ARCADECLASSIC.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://scene/spown_obstaculos.gd" type="Script" id=6]
+[ext_resource path="res://scene/mario.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 100
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -37,6 +39,8 @@ scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
+script = ExtResource( 2 )
+velocidade = 50
 
 [node name="bgpl" type="ParallaxLayer" parent="fundo" index="0"]
 
@@ -49,7 +53,7 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( -0.933167, -47.4756 )
 scale = Vector2( 1.84893, 1.75751 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -67,6 +71,8 @@ scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
+script = ExtResource( 2 )
+velocidade = 150
 
 [node name="bgpl2" type="ParallaxLayer" parent="chao" index="0"]
 
@@ -79,7 +85,7 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( -2.15912, 564.416 )
 scale = Vector2( 0.62612, 0.62612 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
@@ -92,7 +98,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Label" type="Label" parent="hud" index="0"]
+[node name="score" type="Label" parent="hud" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -146,16 +152,19 @@ shape = SubResource( 2 )
 [node name="spown_obstaculos" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
+script = ExtResource( 6 )
 
 [node name="tempo_respown" type="Timer" parent="spown_obstaculos" index="0"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 2.0
 one_shot = false
-autostart = false
+autostart = true
 
-[node name="mario" parent="." index="5" instance=ExtResource( 5 )]
+[node name="mario" parent="." index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 91.1451, 480.212 )
+
+[connection signal="timeout" from="spown_obstaculos/tempo_respown" to="spown_obstaculos" method="_on_tempo_respown_timeout"]
 
 
