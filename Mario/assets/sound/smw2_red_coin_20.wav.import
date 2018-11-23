@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smw2_red_coin_20.wav-af85e1f4a39592c33ff25cd0821d52dc.sample"
+
+[deps]
+
+source_file="res://assets/sound/smw2_red_coin_20.wav"
+dest_files=[ "res://.import/smw2_red_coin_20.wav-af85e1f4a39592c33ff25cd0821d52dc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

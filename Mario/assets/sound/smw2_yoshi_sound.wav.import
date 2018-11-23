@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smw2_yoshi_sound.wav-65ce7c3b8900a6f98eab89515ff72a5a.sample"
+
+[deps]
+
+source_file="res://assets/sound/smw2_yoshi_sound.wav"
+dest_files=[ "res://.import/smw2_yoshi_sound.wav-65ce7c3b8900a6f98eab89515ff72a5a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smw2_lost_baby_mario.wav-ebef40a70877e074ce72dc2c4ce6ec9a.sample"
+
+[deps]
+
+source_file="res://assets/sound/smw2_lost_baby_mario.wav"
+dest_files=[ "res://.import/smw2_lost_baby_mario.wav-ebef40a70877e074ce72dc2c4ce6ec9a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

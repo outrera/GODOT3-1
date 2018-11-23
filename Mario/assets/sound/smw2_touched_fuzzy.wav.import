@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smw2_touched_fuzzy.wav-45bf362f59ba6290fda13ca7a8fcaef5.sample"
+
+[deps]
+
+source_file="res://assets/sound/smw2_touched_fuzzy.wav"
+dest_files=[ "res://.import/smw2_touched_fuzzy.wav-45bf362f59ba6290fda13ca7a8fcaef5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

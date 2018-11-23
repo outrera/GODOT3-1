@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smw2_yoshi_flutter_jump.wav-1ca833c3b4beb611347a4de22f30d454.sample"
+
+[deps]
+
+source_file="res://assets/sound/smw2_yoshi_flutter_jump.wav"
+dest_files=[ "res://.import/smw2_yoshi_flutter_jump.wav-1ca833c3b4beb611347a4de22f30d454.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

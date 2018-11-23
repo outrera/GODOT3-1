@@ -1,0 +1,161 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scene/game.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprite/bgp.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/chao.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/font/ARCADECLASSIC.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://scene/mario.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 100
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.92859, 15.2749 )
+
+[node name="game" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="fundo" type="ParallaxBackground" parent="." index="0"]
+
+editor/display_folded = true
+layer = -2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="bgpl" type="ParallaxLayer" parent="fundo" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1890, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="bg" type="Sprite" parent="fundo/bgpl" index="0"]
+
+position = Vector2( -0.933167, -47.4756 )
+scale = Vector2( 1.84893, 1.75751 )
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="chao" type="ParallaxBackground" parent="." index="1"]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="bgpl2" type="ParallaxLayer" parent="chao" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1000, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="bg" type="Sprite" parent="chao/bgpl2" index="0"]
+
+position = Vector2( -2.15912, 564.416 )
+scale = Vector2( 0.62612, 0.62612 )
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="hud" type="CanvasLayer" parent="." index="2"]
+
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Label" type="Label" parent="hud" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = -10.0
+margin_right = 340.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "0"
+align = 2
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="limite_tela" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="ceu" type="CollisionShape2D" parent="limite_tela" index="0"]
+
+position = Vector2( 175.956, -11.2674 )
+scale = Vector2( 18.0655, 0.812455 )
+shape = SubResource( 2 )
+
+[node name="chao" type="CollisionShape2D" parent="limite_tela" index="1"]
+
+position = Vector2( 175.196, 609.906 )
+scale = Vector2( 17.9955, 2.94975 )
+shape = SubResource( 2 )
+
+[node name="spown_obstaculos" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="tempo_respown" type="Timer" parent="spown_obstaculos" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="mario" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 91.1451, 480.212 )
+
+
